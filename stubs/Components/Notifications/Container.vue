@@ -75,5 +75,11 @@ export default {
     Simple,
   },
   mixins: [ToastNotification],
+  props: {
+    position: {
+      type: String,
+      default: 'right',
+    },
+  },
 }
 </script>

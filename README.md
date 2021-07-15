@@ -29,8 +29,35 @@ import toastPlugin from '@/Plugins/toast'
 .use(toastPlugin)
 ```
 
-Step 3. Finish up installation
+Step 3. Add follow to `HandleInertiaRequests.php`
+
+```php
+'toast' => fn () => $request->session()->get(config('toast.session_id')) ?? []
+```
+
+Final `share` function should look like this.
+
+````php
+/**
+ * Define the props that are shared by default.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return array
+ */
+public function share(Request $request)
+{
+    return array_merge(parent::share($request), [
+        'auth' => [
+            'user' => $request->user(),
+        ],
+        'toast' => fn () => $request->session()->get(config('toast.session_id')) ?? []
+    ]);
+}
+
+```
+
+Step 4. Finish up installation
 
 ```shell
 npm install && npm run dev
-```
+````

@@ -25,10 +25,10 @@ class ToastServiceProvider extends BaseServiceProvider
         $this->app->singleton('toast', fn ($app) => $this->app->make(Toast::class));
 
         // register 'toast' in $page.props in inertia
-        Inertia::share(
-            'toast',
-            fn (Request $request) => $request->session()->get(config('toast.session_id')) ?? []
-        );
+        // Inertia::share(
+        //     'toast',
+        //     fn (Request $request) => $request->session()->get(config('toast.session_id')) ?? []
+        // );
     }
 
     /**
@@ -38,7 +38,6 @@ class ToastServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-
         if (! $this->app->runningInConsole()) {
             return;
         }
@@ -46,7 +45,6 @@ class ToastServiceProvider extends BaseServiceProvider
         $this->commands([
             Console\InstallCommand::class,
         ]);
-
     }
 
     /**
