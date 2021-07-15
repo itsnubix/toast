@@ -1,0 +1,33 @@
+{
+    "name": "itsnubix/toast",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ron Yu",
+            "email": "ryu@nubix.ca"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0",
+        "inertiajs/inertia-laravel": "^0.4.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Nubix\\Toast\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nubix\\Toast\\ToastServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
