@@ -29,7 +29,7 @@ import toastPlugin from '@/Plugins/toast'
 .use(toastPlugin)
 ```
 
-Step 3. Add follow to `HandleInertiaRequests.php`
+Step 3. Add following code to `share()` in `HandleInertiaRequests.php`
 
 ```php
 'toast' => fn () => $request->session()->get(config('toast.session_id')) ?? []
@@ -37,7 +37,8 @@ Step 3. Add follow to `HandleInertiaRequests.php`
 
 Final `share` function should look like this.
 
-````php
+```php
+
 /**
  * Define the props that are shared by default.
  *
@@ -55,6 +56,7 @@ public function share(Request $request)
 }
 
 ```
+
 
 Step 4. Finish up installation
 
