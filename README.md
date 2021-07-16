@@ -10,7 +10,7 @@
 Step 1. Install dev package with Composer
 
 ```shell
-composer require --dev itsnubix/toast
+composer require itsnubix/toast
 php artisan nubix-toast:install
 
 ```
